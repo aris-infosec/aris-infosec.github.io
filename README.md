@@ -20,6 +20,11 @@ No build step, no dependencies, no frameworks. Three files, plain HTML/CSS/JS.
 - A responsive nav with a mobile hamburger menu.
 - Everything respects `prefers-reduced-motion` — animations turn off automatically for anyone with that OS setting on.
 
+## Adding your real links
+
+- Update the LinkedIn/GitHub hrefs in `.social-row` (in the hero) with your real profiles.
+- The CISSP card in Certifications is a link — replace its `href="#"` with your real ISC2 or Credly verification URL.
+
 ## Editing key numbers
 
 - Hero stats: in `index.html`, look for `<div class="stat-row">` — each `data-target="N"` controls the count-up number (certs held, certs in progress, % complete).
