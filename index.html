@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Log — A Path Into Cybersecurity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="net-bg" aria-hidden="true"></canvas>
+<div class="scanline" aria-hidden="true"></div>
+<div class="glow-cursor" aria-hidden="true"></div>
+
+<nav class="site-nav" id="site-nav">
+  <span class="nav-brand">/log</span>
+  <div class="nav-links">
+    <a href="#about" data-nav="about">about</a>
+    <a href="#roadmap" data-nav="roadmap">path</a>
+    <a href="#building" data-nav="building">building</a>
+    <a href="#contact" data-nav="contact">contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker"><span class="dot" aria-hidden="true"></span>access log — live</p>
+    <h1>Your Name<br><span class="hero-role" id="hero-role"></span><span class="caret" aria-hidden="true"></span></h1>
+    <p class="hero-sub">This is the record of that path — what's been earned, what's in progress, and what comes next.</p>
+
+    <div class="status-row">
+      <div class="status-chip status-chip--done">
+        <span class="chip-label">CISSP</span>
+        <span class="chip-state">held</span>
+      </div>
+      <div class="status-chip status-chip--active">
+        <span class="chip-label">CCNA</span>
+        <span class="chip-state">in progress</span>
+      </div>
+    </div>
+
+    <div class="progress-block">
+      <div class="progress-label">
+        <span>path progress</span>
+        <span id="progress-percent">0%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="section about reveal" id="about">
+    <div class="section-head">
+      <p class="section-eyebrow">01</p>
+      <h2>Where this starts</h2>
+    </div>
+    <div class="about-body">
+      <p>I'm early in a cybersecurity career — building the foundation deliberately rather than rushing it. CISSP gave me the vocabulary of the field: risk, governance, architecture, the shape of the whole discipline. Now I'm filling in the technical floor underneath it, starting with networking.</p>
+      <p>This page tracks that build, in order, so it stays honest about what's actually done versus what's planned.</p>
+    </div>
+  </section>
+
+  <section class="section roadmap" id="roadmap">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">02</p>
+      <h2>The path</h2>
+      <p class="section-note">Certifications and milestones, in sequence — click any step for detail.</p>
+    </div>
+
+    <ol class="timeline">
+
+      <li class="entry entry--done reveal" data-state="done">
+        <div class="entry-marker"></div>
+        <button class="entry-body" aria-expanded="false">
+          <div class="entry-top">
+            <h3>CISSP</h3>
+            <span class="tag tag--done">held</span>
+            <span class="entry-toggle" aria-hidden="true">+</span>
+          </div>
+          <p class="entry-summary">Certified Information Systems Security Professional — the map of the field before the terrain.</p>
+          <div class="entry-detail">
+            <p>Covers security and risk management, asset security, architecture and engineering, communication and network security, IAM, assessment and testing, security operations, and software development security — eight domains, broad rather than deep. It's the reason I can talk about the field coherently before knowing how to configure a switch.</p>
+          </div>
+        </button>
+      </li>
+
+      <li class="entry entry--active reveal" data-state="active">
+        <div class="entry-marker"></div>
+        <button class="entry-body" aria-expanded="false">
+          <div class="entry-top">
+            <h3>CCNA</h3>
+            <span class="tag tag--active">in progress</span>
+            <span class="entry-toggle" aria-hidden="true">+</span>
+          </div>
+          <p class="entry-summary">Cisco Certified Network Associate — the hands-on technical floor CISSP assumes but doesn't teach.</p>
+          <div class="entry-detail">
+            <p>Routing and switching, IP addressing and subnetting, VLANs, basic network security, and enough command-line comfort to actually configure the devices I've only read about so far. This is where the theory starts getting hands.</p>
+          </div>
+        </button>
+      </li>
+
+      <li class="entry entry--next reveal" data-state="next">
+        <div class="entry-marker"></div>
+        <button class="entry-body" aria-expanded="false">
+          <div class="entry-top">
+            <h3>Security+ or hands-on labs</h3>
+            <span class="tag tag--next">planned</span>
+            <span class="entry-toggle" aria-hidden="true">+</span>
+          </div>
+          <p class="entry-summary">Either a CompTIA Security+, or straight into practical labs to put the networking to work.</p>
+          <div class="entry-detail">
+            <p>Undecided between rounding out fundamentals formally with Security+, or moving straight into practice — a home lab, TryHackMe rooms, or entry-level CTFs — to start applying the CCNA material against something real.</p>
+          </div>
+        </button>
+      </li>
+
+      <li class="entry entry--next reveal" data-state="next">
+        <div class="entry-marker"></div>
+        <button class="entry-body" aria-expanded="false">
+          <div class="entry-top">
+            <h3>Specialization</h3>
+            <span class="tag tag--next">undecided</span>
+            <span class="entry-toggle" aria-hidden="true">+</span>
+          </div>
+          <p class="entry-summary">Blue team, offensive security, or infrastructure — decision comes after more exposure.</p>
+          <div class="entry-detail">
+            <p>Blue team work (SOC, detection, incident response), offensive security (pentesting, red team), or infrastructure-focused security engineering are all still on the table. Rather than guess now, the plan is to get enough hands-on exposure through labs and CCNA-adjacent work to make an informed choice.</p>
+          </div>
+        </button>
+      </li>
+
+    </ol>
+  </section>
+
+  <section class="section building reveal" id="building">
+    <div class="section-head">
+      <p class="section-eyebrow">03</p>
+      <h2>What I'm building alongside it</h2>
+    </div>
+    <div class="building-grid">
+      <div class="build-item">
+        <h3>Home lab</h3>
+        <p>Setting up a small virtualized lab to practice networking and basic defensive concepts outside of exam material.</p>
+      </div>
+      <div class="build-item">
+        <h3>Notes, in the open</h3>
+        <p>Writing up what I learn as I go, partly for my own retention and partly so the process is visible, not just the credentials.</p>
+      </div>
+      <div class="build-item">
+        <h3>Community</h3>
+        <p>Following people further along the same path and paying attention to what they wish they'd learned earlier.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact reveal" id="contact">
+    <div class="section-head">
+      <p class="section-eyebrow">04</p>
+      <h2>Follow along</h2>
+    </div>
+    <div class="contact-body">
+      <p>Open to conversations, advice, or connections with anyone further along this same road.</p>
+      <div class="contact-links">
+        <a href="mailto:you@example.com" class="contact-link">Email</a>
+        <a href="https://github.com/yourhandle" class="contact-link">GitHub</a>
+        <a href="https://linkedin.com/in/yourhandle" class="contact-link">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Last updated manually — this log grows as the path does.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
