@@ -1,7 +1,7 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------------- Network background canvas ---------------- */
+  /* ---------------- Subtle network background ---------------- */
   const canvas = document.getElementById('net-bg');
   const ctx = canvas.getContext('2d');
   let nodes = [];
@@ -19,22 +19,21 @@
   }
 
   function initNodes() {
-    const count = Math.min(70, Math.floor((w * h) / 22000));
+    const count = Math.min(46, Math.floor((w * h) / 34000));
     nodes = Array.from({ length: count }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
+      vx: (Math.random() - 0.5) * 0.16,
+      vy: (Math.random() - 0.5) * 0.16,
     }));
   }
 
-  const LINK_DIST = 130;
-  const inkColor = '232, 230, 223';
-  const amberColor = '217, 164, 65';
+  const LINK_DIST = 140;
+  const inkRGB = '154, 162, 176';
+  const goldRGB = '201, 161, 90';
 
   function drawFrame() {
     ctx.clearRect(0, 0, w, h);
-
     for (let i = 0; i < nodes.length; i++) {
       const a = nodes[i];
       for (let j = i + 1; j < nodes.length; j++) {
@@ -42,8 +41,8 @@
         const dx = a.x - b.x, dy = a.y - b.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < LINK_DIST) {
-          const alpha = (1 - dist / LINK_DIST) * 0.14;
-          ctx.strokeStyle = `rgba(${inkColor}, ${alpha})`;
+          const alpha = (1 - dist / LINK_DIST) * 0.08;
+          ctx.strokeStyle = `rgba(${inkRGB}, ${alpha})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
@@ -52,11 +51,10 @@
         }
       }
     }
-
     for (const n of nodes) {
       ctx.beginPath();
-      ctx.arc(n.x, n.y, 1.6, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${amberColor}, 0.5)`;
+      ctx.arc(n.x, n.y, 1.3, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${goldRGB}, 0.35)`;
       ctx.fill();
     }
   }
@@ -87,97 +85,34 @@
     }, 150);
   });
 
-  /* ---------------- Cursor glow ---------------- */
-  const glow = document.querySelector('.glow-cursor');
-  if (!reduceMotion && glow) {
-    window.addEventListener('pointermove', (e) => {
-      glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-  }
+  /* ---------------- Stat counters ---------------- */
+  const statNums = document.querySelectorAll('.stat-num');
 
-  /* ---------------- Hero typing effect ---------------- */
-  const roleEl = document.getElementById('hero-role');
-  const roles = [
-    'is working toward a career in cybersecurity.',
-    'is early in the path — CISSP done, CCNA next.',
-    'is building the technical floor under the theory.',
-  ];
-
-  function typeLoop() {
-    let roleIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    function step() {
-      const current = roles[roleIndex];
-      if (!deleting) {
-        charIndex++;
-        roleEl.textContent = current.slice(0, charIndex);
-        if (charIndex === current.length) {
-          deleting = false;
-          setTimeout(() => { deleting = true; step(); }, 2200);
-          return;
-        }
-        setTimeout(step, 28);
-      } else {
-        charIndex--;
-        roleEl.textContent = current.slice(0, charIndex);
-        if (charIndex === 0) {
-          deleting = false;
-          roleIndex = (roleIndex + 1) % roles.length;
-          setTimeout(step, 400);
-          return;
-        }
-        setTimeout(step, 14);
-      }
-    }
-    step();
-  }
-
-  if (roleEl) {
-    if (reduceMotion) {
-      roleEl.textContent = roles[0];
-    } else {
-      typeLoop();
-    }
-  }
-
-  /* ---------------- Progress meter ---------------- */
-  const entries = document.querySelectorAll('.entry');
-  const total = entries.length;
-  const done = document.querySelectorAll('.entry--done').length;
-  const active = document.querySelectorAll('.entry--active').length;
-  const percent = Math.round(((done + active * 0.5) / total) * 100);
-
-  const fill = document.getElementById('progress-fill');
-  const percentLabel = document.getElementById('progress-percent');
-
-  function animateProgress() {
-    if (!fill) return;
-    fill.style.width = percent + '%';
-    if (!percentLabel) return;
-    if (reduceMotion) {
-      percentLabel.textContent = percent + '%';
+  function animateCount(el) {
+    const target = parseInt(el.dataset.target, 10);
+    if (reduceMotion || !target) {
+      el.textContent = target;
       return;
     }
     let current = 0;
+    const step = Math.max(1, Math.round(target / 30));
     const timer = setInterval(() => {
-      current++;
-      percentLabel.textContent = current + '%';
-      if (current >= percent) clearInterval(timer);
-    }, 800 / Math.max(percent, 1));
+      current = Math.min(current + step, target);
+      el.textContent = current;
+      if (current >= target) clearInterval(timer);
+    }, 25);
   }
 
-  const heroObserver = new IntersectionObserver((entries) => {
+  const statObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        animateProgress();
-        heroObserver.disconnect();
+        statNums.forEach(animateCount);
+        statObserver.disconnect();
       }
     });
-  }, { threshold: 0.3 });
-  const progressBlock = document.querySelector('.progress-block');
-  if (progressBlock) heroObserver.observe(progressBlock);
+  }, { threshold: 0.4 });
+  const statRow = document.querySelector('.stat-row');
+  if (statRow) statObserver.observe(statRow);
 
   /* ---------------- Scroll reveal ---------------- */
   const revealEls = document.querySelectorAll('.reveal');
@@ -185,15 +120,13 @@
     revealEls.forEach((el) => el.classList.add('is-visible'));
   } else {
     const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const el = entry.target;
-          const siblingDelay = Array.from(el.parentElement.children).indexOf(el) * 60;
-          setTimeout(() => el.classList.add('is-visible'), siblingDelay);
-          revealObserver.unobserve(el);
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
     revealEls.forEach((el) => revealObserver.observe(el));
   }
 
@@ -205,13 +138,18 @@
     });
   });
 
-  /* ---------------- Nav: scroll spy + background on scroll ---------------- */
+  /* ---------------- Nav: scroll state, scroll-spy, mobile toggle ---------------- */
   const nav = document.getElementById('site-nav');
   const sections = document.querySelectorAll('main .section');
   const navLinks = document.querySelectorAll('.nav-links a');
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinksEl = document.querySelector('.nav-links');
+  const toTopBtn = document.getElementById('to-top');
 
   window.addEventListener('scroll', () => {
-    if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
+    const scrolled = window.scrollY > 40;
+    if (nav) nav.classList.toggle('scrolled', scrolled);
+    if (toTopBtn) toTopBtn.classList.toggle('visible', window.scrollY > 500);
   }, { passive: true });
 
   const spyObserver = new IntersectionObserver((entries) => {
@@ -225,4 +163,23 @@
     });
   }, { threshold: 0.5 });
   sections.forEach((s) => spyObserver.observe(s));
+
+  if (navToggle && navLinksEl) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinksEl.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinksEl.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinksEl.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  if (toTopBtn) {
+    toTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  }
 })();

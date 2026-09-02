@@ -10,14 +10,21 @@ A static, interactive one-page site tracking your path into cybersecurity — CI
 
 No build step, no dependencies, no frameworks. Three files, plain HTML/CSS/JS.
 
-## What's interactive
+## What's in it
 
-- A subtle animated network of connecting nodes in the background — a nod to the networking material itself.
-- A typing effect in the hero that cycles through a few taglines.
-- A live progress meter, calculated automatically from how many roadmap entries are marked done/in-progress.
-- Each step in "The path" expands on click to show more detail.
-- Sections fade/slide in as you scroll to them.
+- A refined editorial layout: sticky sidebar section labels, a certifications grid, a skills breakdown, and a roadmap timeline.
+- A subtle animated network of connecting nodes in the background, and an animated badge/shield graphic in the hero.
+- Count-up stats in the hero (certs held, in progress, path % complete).
+- Each roadmap step expands on click to show more detail.
+- Sections fade in as you scroll to them; a back-to-top button appears after scrolling.
+- A responsive nav with a mobile hamburger menu.
 - Everything respects `prefers-reduced-motion` — animations turn off automatically for anyone with that OS setting on.
+
+## Editing key numbers
+
+- Hero stats: in `index.html`, look for `<div class="stat-row">` — each `data-target="N"` controls the count-up number (certs held, certs in progress, % complete).
+- Certifications: the `.cert-grid` cards under `id="certifications"`.
+- Skills: the three `.skill-group` lists under `id="skills"`.
 
 ## Before publishing — things to edit
 
