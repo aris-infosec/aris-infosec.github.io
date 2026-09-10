@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aris — Cybersecurity Career Log</title>
+<meta name="description" content="Tracking a path into cybersecurity — CISSP held, CCNA in progress.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aris — Cybersecurity Career Log">
+<meta property="og:description" content="Tracking a path into cybersecurity — CISSP held, CCNA in progress.">
+<meta property="og:url" content="https://aris-infosec.github.io/">
+<meta property="og:image" content="https://aris-infosec.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aris — Cybersecurity Career Log">
+<meta name="twitter:description" content="Tracking a path into cybersecurity — CISSP held, CCNA in progress.">
+<meta name="twitter:image" content="https://aris-infosec.github.io/assets/og-image.png">
+<link rel="canonical" href="https://aris-infosec.github.io/">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Aris",
+  "url": "https://aris-infosec.github.io/",
+  "jobTitle": "Aspiring Cybersecurity Professional",
+  "knowsAbout": ["Information Security", "Networking", "CISSP", "CCNA"],
+  "sameAs": [
+    "https://github.com/yourhandle",
+    "https://linkedin.com/in/yourhandle"
+  ]
+}
+</script>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c9a15a' d='M12 1l8 3.5v6c0 5.2-3.4 9.9-8 11.5-4.6-1.6-8-6.3-8-11.5v-6L12 1z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="#top-main" class="skip-link">Skip to content</a>
+
+<div class="top-accent" aria-hidden="true"><div class="top-accent-fill" id="scroll-progress"></div></div>
+<div class="bg-orbs" aria-hidden="true">
+  <div class="orb orb-gold" id="orb-gold"></div>
+  <div class="orb orb-sage" id="orb-sage"></div>
+  <div class="orb orb-ink" id="orb-ink"></div>
+</div>
+<canvas id="net-bg" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="site-nav" id="site-nav">
+  <a href="#top" class="nav-brand">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 2l8 3.6v6.2c0 5.4-3.5 10.2-8 11.7-4.5-1.5-8-6.3-8-11.7V5.6L12 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+      <path d="M8.5 12.2l2.4 2.4 4.6-4.9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Aris</span>
+  </a>
+  <div class="nav-links">
+    <a href="#about" data-nav="about">About</a>
+    <a href="#certifications" data-nav="certifications">Certifications</a>
+    <a href="#roadmap" data-nav="roadmap">Roadmap</a>
+    <a href="#skills" data-nav="skills">Skills</a>
+    <a href="#log" data-nav="log">Log</a>
+    <a href="#contact" data-nav="contact" class="nav-cta">Contact</a>
+  </div>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" aria-pressed="false">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="icon-moon"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="icon-sun"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.5"/><path d="M12 2.5v2.4M12 19.1v2.4M21.5 12h-2.4M4.9 12H2.5M18.4 5.6l-1.7 1.7M7.3 16.7l-1.7 1.7M18.4 18.4l-1.7-1.7M7.3 7.3L5.6 5.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Cybersecurity career log</p>
+      <h1>Building a career in<br><span class="hero-emphasis">information security.</span></h1>
+      <p class="hero-lede">I'm early in the field — CISSP in hand, CCNA underway. This page is a running, honest record of the path: what's certified, what's in motion, and what's ahead.</p>
+
+      <div class="hero-actions">
+        <a href="#roadmap" class="btn btn-primary">View the roadmap</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-num" data-target="1">0</span>
+          <span class="stat-label">Certification held</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="1">0</span>
+          <span class="stat-label">In progress</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num-row"><span class="stat-num" id="stat-progress" data-target="38">0</span><span class="stat-suffix">%</span></span>
+          <span class="stat-label">Path complete</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="orbit-frame">
+        <svg viewBox="0 0 320 320" class="orbit-svg" aria-hidden="true">
+          <circle cx="160" cy="160" r="150" class="orbit-ring orbit-ring--dashed"/>
+          <circle cx="160" cy="160" r="112" class="orbit-ring"/>
+          <circle cx="160" cy="160" r="72" class="orbit-ring orbit-ring--solid"/>
+          <g class="orbit-spin-slow">
+            <circle cx="160" cy="10" r="3.5" class="orbit-node"/>
+            <circle cx="310" cy="160" r="2.5" class="orbit-node orbit-node--dim"/>
+          </g>
+          <g class="orbit-spin-rev">
+            <circle cx="160" cy="48" r="3" class="orbit-node orbit-node--sage"/>
+            <circle cx="48" cy="160" r="2.5" class="orbit-node orbit-node--dim"/>
+          </g>
+        </svg>
+        <div class="orbit-core">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2l8 3.6v6.2c0 5.4-3.5 10.2-8 11.7-4.5-1.5-8-6.3-8-11.7V5.6L12 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            <path d="M8.5 12.2l2.4 2.4 4.6-4.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="social-row">
+        <!-- Update these hrefs with your real profiles -->
+        <a href="https://linkedin.com/in/yourhandle" class="social-link" aria-label="LinkedIn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.1 1 2.48 1 4.98 2.12 4.98 3.5zM.24 8.24H4.7V23H.24V8.24zM8.35 8.24h4.28v2.01h.06c.6-1.13 2.06-2.32 4.24-2.32 4.53 0 5.37 2.98 5.37 6.86V23h-4.46v-6.42c0-1.53-.03-3.5-2.13-3.5-2.14 0-2.47 1.67-2.47 3.39V23H8.35V8.24z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://github.com/yourhandle" class="social-link" aria-label="GitHub">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.39 7.86 10.91.57.1.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.97.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.15v3.19c0 .31.21.66.8.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top-main">
+
+  <section class="section about reveal" id="about">
+    <div class="section-grid">
+      <div class="section-label">
+        <p class="section-kicker">01 — About</p>
+      </div>
+      <div class="section-content">
+        <h2>Where this starts</h2>
+        <p>I'm early in a cybersecurity career, building the foundation deliberately rather than rushing it. CISSP gave me the vocabulary of the field — risk, governance, architecture, the shape of the whole discipline. Now I'm filling in the technical floor underneath it, starting with networking.</p>
+        <p>This page tracks that build in order, so it stays honest about what's actually done versus what's still ahead.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section certifications reveal" id="certifications">
+    <div class="section-grid">
+      <div class="section-label">
+        <p class="section-kicker">02 — Certifications</p>
+      </div>
+      <div class="section-content">
+        <h2>Credentials</h2>
+        <p class="section-intro">Where I stand right now, and what's next in line.</p>
+
+        <div class="cert-grid">
+          <!-- Replace href with your real ISC2/Credly verification link -->
+          <a href="#" class="cert-card cert-card--held reveal-item" target="_blank" rel="noopener">
+            <div class="cert-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3.6v6.2c0 5.4-3.5 10.2-8 11.7-4.5-1.5-8-6.3-8-11.7V5.6L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-status cert-status--held">Held</span>
+              <span class="cert-year">2025</span>
+            </div>
+            <h3>CISSP</h3>
+            <p class="cert-full">Certified Information Systems Security Professional</p>
+            <p class="cert-desc">Cross-domain coverage of security and risk management, architecture, engineering, and governance.</p>
+            <span class="cert-verify">Verify credential
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+
+          <div class="cert-card cert-card--active reveal-item">
+            <div class="cert-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-status cert-status--active">In progress</span>
+              <span class="cert-year">Target 2026</span>
+            </div>
+            <h3>CCNA</h3>
+            <p class="cert-full">Cisco Certified Network Associate</p>
+            <p class="cert-desc">Routing, switching, IP addressing, and the hands-on networking layer CISSP assumes but doesn't teach.</p>
+          </div>
+
+          <div class="cert-card cert-card--next reveal-item">
+            <div class="cert-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="1.4" fill="currentColor"/><circle cx="12" cy="6" r="1.2" fill="currentColor" opacity="0.5"/><circle cx="12" cy="18" r="1.2" fill="currentColor" opacity="0.5"/></svg>
+            </div>
+            <div class="cert-card-top">
+              <span class="cert-status cert-status--next">Planned</span>
+              <span class="cert-year">—</span>
+            </div>
+            <h3>Security+</h3>
+            <p class="cert-full">CompTIA Security+</p>
+            <p class="cert-desc">Rounding out fundamentals, or moving straight into hands-on labs — decision still open.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section roadmap reveal" id="roadmap">
+    <div class="section-grid">
+      <div class="section-label">
+        <p class="section-kicker">03 — Roadmap</p>
+      </div>
+      <div class="section-content">
+        <h2>The path</h2>
+        <p class="section-intro">Every step, in sequence. Click any entry for detail.</p>
+
+        <ol class="timeline">
+
+          <li class="entry entry--done reveal-item" data-state="done">
+            <div class="entry-rail">
+              <span class="entry-num">01</span>
+              <span class="entry-line" aria-hidden="true"></span>
+            </div>
+            <button class="entry-body" aria-expanded="false">
+              <div class="entry-top">
+                <h3>CISSP</h3>
+                <span class="tag tag--done">Held</span>
+                <span class="entry-toggle" aria-hidden="true"></span>
+              </div>
+              <p class="entry-summary">The map of the field before the terrain.</p>
+              <div class="entry-detail">
+                <p>Covers security and risk management, asset security, architecture and engineering, communication and network security, IAM, assessment and testing, security operations, and software development security — eight domains, broad rather than deep. It's the reason I can talk about the field coherently before knowing how to configure a switch.</p>
+              </div>
+            </button>
+          </li>
+
+          <li class="entry entry--active reveal-item" data-state="active">
+            <div class="entry-rail">
+              <span class="entry-num">02</span>
+              <span class="entry-line" aria-hidden="true"></span>
+            </div>
+            <button class="entry-body" aria-expanded="false">
+              <div class="entry-top">
+                <h3>CCNA</h3>
+                <span class="tag tag--active">In progress</span>
+                <span class="entry-toggle" aria-hidden="true"></span>
+              </div>
+              <p class="entry-summary">The hands-on technical floor CISSP assumes but doesn't teach.</p>
+              <div class="entry-detail">
+                <p>Routing and switching, IP addressing and subnetting, VLANs, basic network security, and enough command-line comfort to actually configure the devices I've only read about so far. This is where the theory starts getting hands.</p>
+              </div>
+            </button>
+          </li>
+
+          <li class="entry entry--next reveal-item" data-state="next">
+            <div class="entry-rail">
+              <span class="entry-num">03</span>
+              <span class="entry-line" aria-hidden="true"></span>
+            </div>
+            <button class="entry-body" aria-expanded="false">
+              <div class="entry-top">
+                <h3>Security+ or hands-on labs</h3>
+                <span class="tag tag--next">Planned</span>
+                <span class="entry-toggle" aria-hidden="true"></span>
+              </div>
+              <p class="entry-summary">Formalize fundamentals, or start applying them for real.</p>
+              <div class="entry-detail">
+                <p>Undecided between rounding out fundamentals formally with Security+, or moving straight into practice — a home lab, TryHackMe rooms, or entry-level CTFs — to start applying the CCNA material against something real.</p>
+              </div>
+            </button>
+          </li>
+
+          <li class="entry entry--next reveal-item" data-state="next">
+            <div class="entry-rail">
+              <span class="entry-num">04</span>
+              <span class="entry-line" aria-hidden="true"></span>
+            </div>
+            <button class="entry-body" aria-expanded="false">
+              <div class="entry-top">
+                <h3>Specialization</h3>
+                <span class="tag tag--next">Undecided</span>
+                <span class="entry-toggle" aria-hidden="true"></span>
+              </div>
+              <p class="entry-summary">Blue team, offensive security, or infrastructure.</p>
+              <div class="entry-detail">
+                <p>Blue team work (SOC, detection, incident response), offensive security (pentesting, red team), or infrastructure-focused security engineering are all still on the table. Rather than guess now, the plan is to get enough hands-on exposure through labs and CCNA-adjacent work to make an informed choice.</p>
+              </div>
+            </button>
+          </li>
+
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section skills reveal" id="skills">
+    <div class="section-grid">
+      <div class="section-label">
+        <p class="section-kicker">04 — Skills</p>
+      </div>
+      <div class="section-content">
+        <h2>What I'm building alongside it</h2>
+        <p class="section-intro">Practical work that runs in parallel with the certifications.</p>
+
+        <div class="skills-columns">
+          <div class="skill-group reveal-item">
+            <h3>Foundations</h3>
+            <ul class="chip-list">
+              <li>Security &amp; risk management</li>
+              <li>Governance &amp; compliance basics</li>
+              <li>IAM concepts</li>
+              <li>Security operations theory</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal-item">
+            <h3>In progress</h3>
+            <ul class="chip-list">
+              <li class="chip-active">Routing &amp; switching</li>
+              <li class="chip-active">Subnetting</li>
+              <li class="chip-active">VLANs</li>
+              <li class="chip-active">CLI fundamentals</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal-item">
+            <h3>Building next</h3>
+            <ul class="chip-list">
+              <li class="chip-next">Home lab (virtualized)</li>
+              <li class="chip-next">Packet analysis</li>
+              <li class="chip-next">CTF fundamentals</li>
+              <li class="chip-next">Log review</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section log reveal" id="log">
+    <div class="section-grid">
+      <div class="section-label">
+        <p class="section-kicker">05 — Log</p>
+      </div>
+      <div class="section-content">
+        <h2>Recent entries</h2>
+        <p class="section-intro">Short, dated notes — the actual log this page is named for. Edit or add to these as things happen.</p>
+
+        <ul class="log-list">
+          <!-- Edit these entries as your own progress happens -->
+          <li class="log-entry reveal-item">
+            <span class="log-date">2026-09</span>
+            <span class="log-text">Rebuilt this site with a proper roadmap and certification tracker instead of a plain resume page.</span>
+          </li>
+          <li class="log-entry reveal-item">
+            <span class="log-date">2026-08</span>
+            <span class="log-text">Started structured CCNA study — subnetting drills most days, aiming to sit the exam within a few months.</span>
+          </li>
+          <li class="log-entry reveal-item">
+            <span class="log-date">2026-06</span>
+            <span class="log-text">Passed CISSP. First real credential — the starting point for everything tracked here.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact reveal" id="contact">
+    <div class="section-grid">
+      <div class="section-label">
+        <p class="section-kicker">06 — Contact</p>
+      </div>
+      <div class="section-content">
+        <div class="contact-card">
+          <h2>Follow along</h2>
+          <p>Open to conversations, advice, or connections with anyone further along this same road.</p>
+          <div class="contact-links">
+            <a href="mailto:you@example.com" class="contact-link" id="email-link" data-email="you@example.com">
+              <span>Email</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <button class="contact-link contact-link--copy" id="email-copy" type="button">
+              <span id="email-copy-label">Copy email</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M4 16V5.5A1.5 1.5 0 015.5 4H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </button>
+            <a href="https://github.com/yourhandle" class="contact-link">
+              <span>GitHub</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/yourhandle" class="contact-link">
+              <span>LinkedIn</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>Aris — Cybersecurity career log</span>
+    <span>Updated manually as the path grows.</span>
+  </div>
+</footer>
+
+<button class="to-top" id="to-top" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L6 11M12 5l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
