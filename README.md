@@ -22,6 +22,7 @@ No build step, no dependencies, no frameworks.
 - A skip-to-content link for keyboard and screen reader users (press Tab on page load to see it).
 - Structured data (JSON-LD) describing you as a Person, for better search engine understanding.
 - A styled 404 page instead of GitHub's default.
+- An "Experience" section — a timeline of your actual career path (engineering → space industry → accreditation → security manager → present), giving real weight alongside the certifications.
 - Self-hosted fonts (Lora / Work Sans / JetBrains Mono) — no requests to Google Fonts, so no visitor IP data goes to a third party before consent. See "Fonts" below.
 - A "Recent entries" log section — short, dated notes that actually live up to the "career log" idea, instead of that just being a name.
 - A subtle 3D tilt on the hero graphic that follows your cursor (skipped automatically on touch devices).
@@ -53,6 +54,10 @@ The site uses self-hosted fonts instead of Google Fonts, for two reasons: no thi
 - Font files live in `assets/fonts/` as `.woff2` (small, fast) plus their `OFL.txt` license files — keep the license files if you redistribute the site's code, per the SIL Open Font License.
 - Fonts in use: **Lora** (serif, headings), **Work Sans** (sans, body text), **JetBrains Mono** (labels, tags, code-style text) — visually close to the original Fraunces/Inter/JetBrains Mono pairing, all open-licensed and self-hostable.
 - To swap in different fonts later: add new `.woff2` files to `assets/fonts/`, update the `@font-face` blocks near the top of `style.css`, and update the `--serif` / `--sans` / `--mono` variables just below them.
+
+## Editing the experience timeline
+
+- Find `<ol class="exp-list">` in `index.html`. Each `<li class="exp-item">` is one role — edit the `h3` title and `exp-desc` text. Add `<span class="exp-current">Current</span>` inside `.exp-top` to mark your present role (only one should have it).
 
 ## Editing key numbers
 
