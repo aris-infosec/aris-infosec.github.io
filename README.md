@@ -59,9 +59,9 @@ The site uses self-hosted fonts instead of Google Fonts, for two reasons: no thi
 
 ## Before publishing — things to edit
 
-In `index.html`:
 - Replace `Your Name` in the hero with your actual name or handle.
-- Update the `mailto:you@example.com`, GitHub, and LinkedIn links near the bottom (`contact-links`) with your real ones.
+- Update the placeholder contact info — search the file for `REPLACE-ME` (used in the email, GitHub, and LinkedIn links, in both the hero and the Contact section, plus the JSON-LD block near the top) and swap in your real details.
+- The one-line `.hero-pitch` right under the headline is meant to be a fast, skimmable summary — keep it short if you update it.
 
 ## Publish it on GitHub Pages
 

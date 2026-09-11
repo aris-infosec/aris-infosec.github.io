@@ -328,6 +328,15 @@ html[data-theme="light"] .orb-ink { background: radial-gradient(circle, rgba(87,
 
 .hero-emphasis { color: var(--gold); }
 
+.hero-pitch {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--ink);
+  max-width: 34rem;
+  margin: 0 0 0.85rem;
+}
+
 .hero-lede {
   color: var(--ink-dim);
   font-size: 1.08rem;
@@ -395,8 +404,8 @@ html[data-theme="light"] .orb-ink { background: radial-gradient(circle, rgba(87,
 
 .orbit-frame {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: min(280px, 100%);
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -740,9 +749,12 @@ main { position: relative; z-index: 2; }
 }
 
 .exp-item {
-  padding: 1.1rem 0;
+  padding: 1.1rem 0 1.1rem 1rem;
   border-bottom: 1px solid var(--line-soft);
+  border-left: 2px solid var(--line-soft);
+  transition: border-left-color 0.2s ease;
 }
+.exp-item:hover { border-left-color: var(--gold-dim); }
 .exp-item:last-child { border-bottom: none; }
 
 .exp-top {
