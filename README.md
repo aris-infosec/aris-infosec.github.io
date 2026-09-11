@@ -15,7 +15,7 @@ No build step, no dependencies, no frameworks.
 
 ## What's in it
 
-- A refined editorial layout: sticky sidebar section labels, a certifications grid, a skills breakdown, and a roadmap timeline.
+- A refined editorial layout: sticky sidebar section labels, a unified "Path" timeline (degrees + certifications, in order), and a skills breakdown.
 - A light/dark theme toggle (top right of the nav) that remembers the visitor's choice.
 - A layered, parallax background: soft color-glow orbs drift at different speeds behind the network animation as you scroll, giving the page a sense of depth.
 - Open Graph and Twitter meta tags with a real preview image, so the link looks good when shared on LinkedIn or elsewhere.
@@ -36,11 +36,6 @@ No build step, no dependencies, no frameworks.
 ## Adding your real links
 
 - Update the LinkedIn/GitHub hrefs in `.social-row` (in the hero) with your real profiles.
-- The CISSP card in Certifications is a link — replace its `href="#"` with your real ISC2 or Credly verification URL.
-
-## Editing the hero trail
-
-- Find `<div class="focus-trail">` in `index.html`. It shows three steps (`trail-step--done`, `trail-step--active`, `trail-step--next`) — update the text and classes as your status changes (e.g. once CCNA is done, move it to `--done` and promote the next step to `--active`).
 
 ## Fonts
 
@@ -52,11 +47,14 @@ The site uses self-hosted fonts instead of Google Fonts, for two reasons: no thi
 
 ## Editing the experience timeline
 
-- Find `<ol class="exp-list">` in `index.html`. Each `<li class="exp-item">` is one role — edit the `h3` title and `exp-desc` text. Add `<span class="exp-current">Current</span>` inside `.exp-top` to mark your present role (only one should have it).
+- Find `<ol class="exp-list">` in `index.html`. Each `<li class="exp-item">` is one role — edit the `h3` title and `exp-desc` text. Add `<span class="exp-current">Current</span>` inside `.exp-top` to mark your present role (only one should have it) — it's styled gold with a small pulsing dot.
+
+## Editing "The Path"
+
+- Find `<ol class="timeline">` under `id="path"` in `index.html`. It's a single chronological list — degrees, then certifications, in order. Each `<li class="entry ...">` has a status class (`entry--done`, `entry--active`, `entry--next`), a summary line (always visible), and an `.entry-detail` (shown on click). Update the status class as things change — e.g. once CCNA is done, change `entry--active` to `entry--done` and promote the next entry to `entry--active`.
 
 ## Editing key numbers
 
-- Credentials: the `.cert-grid` cards under `id="certifications"` (now includes certifications and your two degrees).
 - Skills: the three `.skill-group` lists under `id="skills"`.
 
 ## Before publishing — things to edit
@@ -64,8 +62,6 @@ The site uses self-hosted fonts instead of Google Fonts, for two reasons: no thi
 In `index.html`:
 - Replace `Your Name` in the hero with your actual name or handle.
 - Update the `mailto:you@example.com`, GitHub, and LinkedIn links near the bottom (`contact-links`) with your real ones.
-- Edit the roadmap entries (`<li class="entry ...">` blocks) as your plan changes — mark CCNA as `done` when you pass it, add new steps, etc. The progress meter updates automatically based on how many entries have class `entry--done` / `entry--active`.
-- Each entry has an `.entry-summary` (always visible) and an `.entry-detail` (shown on click) — edit both.
 
 ## Publish it on GitHub Pages
 

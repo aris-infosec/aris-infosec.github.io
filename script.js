@@ -170,7 +170,7 @@
 
   /* ---------------- Scroll reveal ---------------- */
   const revealEls = document.querySelectorAll('.reveal');
-  const revealItemGroups = document.querySelectorAll('.cert-grid, .timeline, .skills-columns, .exp-list');
+  const revealItemGroups = document.querySelectorAll('.timeline, .skills-columns, .exp-list');
 
   if (reduceMotion) {
     revealEls.forEach((el) => el.classList.add('is-visible'));
