@@ -920,6 +920,29 @@ a:focus-visible, button:focus-visible {
   outline-offset: 2px;
 }
 
+/* ---------- Print ---------- */
+
+@media print {
+  #net-bg, .grain, .bg-orbs, .top-accent, .skip-link,
+  .site-nav, .to-top, .theme-toggle { display: none !important; }
+
+  body { background: #fff; color: #111; }
+
+  .hero::before { display: none; }
+
+  .section { border-top: 1px solid #ddd; break-inside: avoid; }
+
+  .cert-card, .contact-card, .exp-item { box-shadow: none !important; }
+
+  a { color: #111; text-decoration: underline; }
+
+  .entry-detail {
+    grid-template-rows: 1fr !important;
+    opacity: 1 !important;
+    margin-top: 0.5rem !important;
+  }
+}
+
 /* ---------- Skip link ---------- */
 
 .skip-link {

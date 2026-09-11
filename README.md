@@ -22,6 +22,7 @@ No build step, no dependencies, no frameworks.
 - A skip-to-content link for keyboard and screen reader users (press Tab on page load to see it).
 - Structured data (JSON-LD) describing you as a Person, for better search engine understanding.
 - A styled 404 page instead of GitHub's default.
+- A print stylesheet — if someone prints the page or saves it as a PDF, decorative backgrounds and animations are stripped out in favor of a clean, readable, ink-friendly layout.
 - An "Experience" section — a timeline of your actual career path (engineering → space industry → accreditation → security manager → present), giving real weight alongside the certifications.
 - Self-hosted fonts (Lora / Work Sans / JetBrains Mono) — no requests to Google Fonts, so no visitor IP data goes to a third party before consent. See "Fonts" below.
 - A subtle 3D tilt on the hero graphic that follows your cursor (skipped automatically on touch devices).
