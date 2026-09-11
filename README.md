@@ -24,7 +24,6 @@ No build step, no dependencies, no frameworks.
 - A styled 404 page instead of GitHub's default.
 - An "Experience" section — a timeline of your actual career path (engineering → space industry → accreditation → security manager → present), giving real weight alongside the certifications.
 - Self-hosted fonts (Lora / Work Sans / JetBrains Mono) — no requests to Google Fonts, so no visitor IP data goes to a third party before consent. See "Fonts" below.
-- A "Recent entries" log section — short, dated notes that actually live up to the "career log" idea, instead of that just being a name.
 - A subtle 3D tilt on the hero graphic that follows your cursor (skipped automatically on touch devices).
 - Click-to-copy email, a live scroll progress indicator, and staggered entrance animations for cards.
 - Everything respects `prefers-reduced-motion`.
@@ -38,10 +37,6 @@ No build step, no dependencies, no frameworks.
 
 - Update the LinkedIn/GitHub hrefs in `.social-row` (in the hero) with your real profiles.
 - The CISSP card in Certifications is a link — replace its `href="#"` with your real ISC2 or Credly verification URL.
-
-## Editing the log entries
-
-- Find `<ul class="log-list">` in `index.html` — each `<li class="log-entry">` has a `log-date` (format `YYYY-MM`) and `log-text`. Add new entries at the top as things happen, or edit the placeholders to reflect your real timeline.
 
 ## Editing the hero trail
 
@@ -61,7 +56,7 @@ The site uses self-hosted fonts instead of Google Fonts, for two reasons: no thi
 
 ## Editing key numbers
 
-- Certifications: the `.cert-grid` cards under `id="certifications"`.
+- Credentials: the `.cert-grid` cards under `id="certifications"` (now includes certifications and your two degrees).
 - Skills: the three `.skill-group` lists under `id="skills"`.
 
 ## Before publishing — things to edit

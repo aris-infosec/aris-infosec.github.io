@@ -920,44 +920,6 @@ main { position: relative; z-index: 2; }
   margin: 0;
 }
 
-/* ---------- Log entries ---------- */
-
-.log-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.log-entry {
-  display: grid;
-  grid-template-columns: 6rem 1fr;
-  gap: 1.25rem;
-  padding-left: 1rem;
-  border-left: 2px solid var(--line);
-  transition: border-color 0.2s ease;
-}
-.log-entry:hover { border-left-color: var(--gold); }
-
-.log-date {
-  font-family: var(--mono);
-  font-size: 0.82rem;
-  color: var(--gold);
-  padding-top: 0.15rem;
-}
-
-.log-text {
-  color: var(--ink-dim);
-  font-size: 0.98rem;
-  max-width: 36rem;
-}
-
-@media (max-width: 560px) {
-  .log-entry { grid-template-columns: 1fr; gap: 0.4rem; }
-}
-
 /* ---------- Contact ---------- */
 
 .contact-card {
